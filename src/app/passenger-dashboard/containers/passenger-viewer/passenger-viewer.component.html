@@ -1,0 +1,11 @@
+<div>
+  <h2>Passenger Viewer Container!</h2>
+  {{ passenger | json }}
+
+  <button (click)="goBack()">&lsaquo; Go Back</button>
+
+  <app-passenger-form
+    [detail]="passenger"
+    (update)="onUpdatePassenger($event)"
+  ></app-passenger-form>
+</div>

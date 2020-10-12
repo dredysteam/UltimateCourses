@@ -1,0 +1,32 @@
+<div>
+  <div>Auth Form: {{ form.value | json }}</div>
+  <ng-content select="h3"></ng-content>
+
+  <form
+    (ngSubmit)="handleSubmit(form.value, form.valid)"
+    #form="ngForm"
+    novalidate
+  >
+    <div><input type="text" name="username" ngModel #username required /></div>
+
+    <div>
+      <input type="password" name="password" ngModel required />
+    </div>
+
+    <!-- <button [disabled]="form.invalid" type="submit">Submit</button> -->
+    <ng-content select="app-auth-remember"></ng-content>
+    <app-auth-message
+      [style.display]="showMessage ? 'inherit' : 'none'"
+    ></app-auth-message>
+    <!-- <app-auth-message
+      [style.display]="showMessage ? 'inherit' : 'none'"
+    ></app-auth-message>
+    <app-auth-message
+      [style.display]="showMessage ? 'inherit' : 'none'"
+    ></app-auth-message> -->
+    <ng-content select="button"></ng-content>
+
+    <div>Valid:{{ form.valid }}</div>
+    <div>Invalid: {{ form.invalid }}</div>
+  </form>
+</div>

@@ -1,0 +1,34 @@
+<div [formGroup]="parent">
+  <h4>Stock Branch Dump Component</h4>
+  <div formGroupName="store">
+    <input type="text" placeholder="Branch ID" formControlName="branch" />
+    <!-- <div
+      class="error"
+      *ngIf="
+        parent.get('store.branch').hasError('required') &&
+        parent.get('store.branch').touched
+      "
+    > -->
+    <div class="error" *ngIf="required('branch')">Branch ID is required</div>
+    <!-- <div
+      class="error"
+      *ngIf="
+        parent.get('store.branch').hasError('invalidBranch') &&
+        parent.get('store.branch').dirty
+      "
+    > -->
+    <div class="error" *ngIf="invalid">
+      Invalid branch code: 1 letter, 3 numbers
+    </div>
+    <div class="error" *ngIf="unknown">Unknown Branch , please chech de ID</div>
+    <input type="text" placeholder="Manager Code" formControlName="code" />
+    <!-- <div
+      class="error"
+      *ngIf="
+        parent.get('store.code').hasError('required') &&
+        parent.get('store.code').touched
+      "
+    > -->
+    <div class="error" *ngIf="required('code')">Manager ID is required</div>
+  </div>
+</div>

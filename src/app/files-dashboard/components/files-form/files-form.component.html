@@ -1,0 +1,30 @@
+<div>
+  <h3>File Form</h3>
+  <form
+    novalidate
+    (ngSubmit)="handleSubmit(fileform.value, fileform.valid)"
+    #fileform="ngForm"
+  >
+    File Form: {{ detail | json }}
+    <div>
+      <strong> File Name: </strong>
+      <input
+        name="fullName"
+        type="text"
+        [ngModel]="detail?.name"
+        #fullName="ngModel"
+      />
+    </div>
+    <div>
+      <strong> File Size: </strong>
+      <input name="size" type="text" [ngModel]="detail?.size" #size="ngModel" />
+    </div>
+    <div>
+      <strong> File Type: </strong>
+      <input name="type" type="text" [ngModel]="detail?.type" #type="ngModel" />
+    </div>
+    <div><strong>Form Valid:</strong>{{ fileform.valid }}</div>
+    <div><strong>Form InValid:</strong>{{ fileform.invalid }}</div>
+    <button type="submit" [disabled]="fileform.invalid">Update File</button>
+  </form>
+</div>

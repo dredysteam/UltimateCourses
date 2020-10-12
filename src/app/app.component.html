@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="container">
+  <nav class="nav" fxFlex>
+    <!-- [routerLink]="[{ outlets: { primary: [item.link], auxo: null } }]" -->
+    <a
+      *ngFor="let item of nav"
+      [routerLink]="item.link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: item.exact }"
+      >{{ item.name }}</a
+    >
+  </nav>
+  <div fxFlex>
+    <router-outlet
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+    ></router-outlet>
+    <router-outlet name="auxo"></router-outlet>
+  </div>
+</div>

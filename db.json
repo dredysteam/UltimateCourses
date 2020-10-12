@@ -1,0 +1,101 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "passengers": [
+    {
+      "fullName": "JJRenaaa",
+      "id": 3,
+      "checkedIn": true,
+      "baggage": "none",
+      "checkInDate": 1488412800000
+    },
+    {
+      "fullName": "Ann",
+      "id": 4,
+      "checkedIn": true,
+      "baggage": "none",
+      "checkInDate": 1600117885024
+    }
+  ],
+  "files": [
+    {
+      "id": 1,
+      "name": "logo.svg",
+      "size": 2120109,
+      "type": "image/svg"
+    },
+    {
+      "id": 2,
+      "name": "banner.jpg",
+      "size": 18029,
+      "type": "image/jpg"
+    },
+    {
+      "id": 3,
+      "name": "background.png",
+      "size": 1784562,
+      "type": "image/png"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "price": 1200,
+      "name": "Mac Book Pro"
+    },
+    {
+      "id": 2,
+      "price": 800,
+      "name": "USB_Adapter"
+    },
+    {
+      "id": 3,
+      "price": 1100,
+      "name": "Ipad"
+    },
+    {
+      "id": 4,
+      "price": 1800,
+      "name": "IPhone"
+    }
+  ],
+  "cart": [
+    {
+      "product_id": 1,
+      "quantity": 10
+    },
+    {
+      "product_id": 3,
+      "quantity": 150
+    }
+  ],
+  "branches": [
+    {
+      "id": "B182"
+    },
+    {
+      "id": "A779"
+    },
+    {
+      "id": "C390"
+    },
+    {
+      "id": "b182"
+    }
+  ]
+}

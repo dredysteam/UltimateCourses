@@ -1,0 +1,61 @@
+<div>
+  <ul>
+    <li>
+      <span
+        class="status"
+        [ngClass]="{ 'checked-In': detail.checkedIn }"
+      ></span>
+      <div *ngIf="editing">
+        <input
+          type="text"
+          [value]="detail.fullName"
+          (input)="onNameChange(name.value)"
+          #name
+        />
+      </div>
+      <div *ngIf="!editing">
+        {{ detail.fullName }}
+      </div>
+      <p>{{ detail | json }}</p>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <span
+        class="status"
+        [ngStyle]="{ background: detail.checkedIn ? '#2ecc71' : '#c0392b' }"
+      ></span>
+      <div *ngIf="editing">
+        <input
+          type="text"
+          [value]="detail.fullName"
+          (input)="onNameChange(name.value)"
+          #name
+        />
+      </div>
+      <div *ngIf="!editing">
+        {{ detail.fullName }}
+      </div>
+      <div class="date">
+        Check In Date :
+        {{
+          detail.checkInDate
+            ? (detail.checkInDate | date: "y MMMM d" | uppercase)
+            : "Not Check In Date"
+        }}
+      </div>
+      <!-- <div>Children : {{ detail.children?.length || 0 }}</div> -->
+    </li>
+  </ul>
+  <div>
+    <button (click)="toggleEdit()">{{ editing ? "Done" : "Edit" }}</button>
+  </div>
+  <div>
+    <button (click)="onRemove()">Remove</button>
+  </div>
+  <div>
+    <button (click)="goToPassenger()">View</button>
+  </div>
+  <hr />
+</div>

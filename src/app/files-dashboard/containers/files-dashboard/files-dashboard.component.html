@@ -1,0 +1,8 @@
+<div *ngFor="let item of files">
+  <p><strong>Name:</strong> {{ item.name }}</p>
+  <p><strong>Size :</strong> {{ item.size | filesize }}</p>
+  <p><strong>Type :</strong> {{ item.type }}</p>
+  <button [routerLink]="[{ outlets: { auxo: ['file', item.id] } }]">
+    View
+  </button>
+</div>

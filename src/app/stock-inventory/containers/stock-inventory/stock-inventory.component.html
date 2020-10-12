@@ -1,0 +1,24 @@
+<div>
+  <h3>Topic: Reactive Forms!!!!!</h3>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-stock-branch [parent]="form"></app-stock-branch>
+
+    <app-stock-selector
+      [parent]="form"
+      [products]="products"
+      (added)="addStock($event)"
+    ></app-stock-selector>
+    <app-stock-products
+      [parent]="form"
+      [map]="productMap"
+      (removed)="removeStock($event)"
+    ></app-stock-products>
+    <hr />
+    <div>Total: {{ total | currency: "USD":true }}</div>
+    <hr />
+    <div>
+      <button type="submit" [disabled]="form.invalid">Order Stock</button>
+    </div>
+    <pre>{{ form.value | json }}</pre>
+  </form>
+</div>

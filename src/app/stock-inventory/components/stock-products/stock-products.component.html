@@ -1,0 +1,23 @@
+<div [formGroup]="parent">
+  <h4>Stock Products Dump Component</h4>
+  <div formArrayName="stock">
+    <div *ngFor="let item of stocks; let i = index">
+      <div [formGroupName]="i">
+        <div>
+          {{ getProduct(item.value.product_id)?.name }}
+        </div>
+        <div>
+          {{ getProduct(item.value.product_id).price | currency: "USD":true }}
+        </div>
+        <input
+          type="number"
+          step="10"
+          min="10"
+          max="1000"
+          formControlName="quantity"
+        />
+        <button type="button" (click)="onRemove(item, i)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

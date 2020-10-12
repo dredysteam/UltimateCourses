@@ -1,0 +1,23 @@
+<div>
+  <h2>Airline Passenger</h2>
+  <div *ngFor="let passenger of passengers">
+    {{ passenger.fullName }}
+  </div>
+  <app-passenger-count [items]="passengers"></app-passenger-count>
+  <h3>Passenger Detail Component</h3>
+  <!-- <p>{{ data | json }}</p> -->
+  <!-- <app-passenger-detail
+    [detail]="passenger"
+    (remove)="handleRemove($event)"
+    (edit)="handleEdit($event)"
+    (view)="handleView($event)"
+    *ngFor="let passenger of passengers"
+  ></app-passenger-detail> -->
+  <app-passenger-detail
+    [detail]="passenger"
+    (remove)="handleRemove($event)"
+    (edit)="handleEdit($event)"
+    (view)="handleView($event)"
+    *ngFor="let passenger of passengers"
+  ></app-passenger-detail>
+</div>

@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <app-auth-form (submitted)="handleUser($event)" fxFlex>
+    <h3>Login</h3>
+    <app-auth-remember (checked)="rememberUser($event)"></app-auth-remember>
+    <!-- <app-auth-remember (checked)="rememberUser($event)"></app-auth-remember>
+      <app-auth-remember (checked)="rememberUser($event)"></app-auth-remember> -->
+    <button type="submit" class="btn btn-primary">Login</button>
+  </app-auth-form>
+
+  <app-auth-form (submitted)="handleUser($event)" fxFlex>
+    <h3>Create Account</h3>
+    <button type="submit" class="btn btn-primary">Join Us</button>
+  </app-auth-form>
+</div>
